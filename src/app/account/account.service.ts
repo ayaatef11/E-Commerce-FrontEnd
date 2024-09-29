@@ -30,8 +30,10 @@ State Management: BehaviorSubjects are commonly used in state management scenari
 
   private currentUserSourse = new BehaviorSubject<User | null>(null);
   currentUser$ = this.currentUserSourse.asObservable();
-
-  loadCurrentUser(token:string){
+//This function takes a token (a string) as an argument, which is typically a JWT (JSON Web Token).
+// The token is used to authenticate the user when making a request to the backend.
+//http get user
+loadCurrentUser(token:string){
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);
     return this._HttpClient.get<User>(this.baseUrl + 'account', {headers}).pipe(
@@ -59,7 +61,7 @@ State Management: BehaviorSubjects are commonly used in state management scenari
       })
     );
   }
-
+/*important  */
   logout(){
     localStorage.removeItem('token');
     this.currentUserSourse.next(null);
