@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AccountService } from '../account/account.service';
-import { BasketService } from '../basket/basket.service';
+import { AccountService } from '../../account/account.service';
+import { BasketService } from '../../basket/basket.service';
 
 @Component({
   selector: 'app-checkout',
