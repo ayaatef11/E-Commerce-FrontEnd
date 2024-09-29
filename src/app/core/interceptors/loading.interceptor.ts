@@ -2,7 +2,7 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/c
 import { Injectable } from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
 import { Observable, delay, finalize, identity } from "rxjs";
-import { environment } from "../../../environments/environment";
+import { environment } from "../../environements/environment";
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {
@@ -20,4 +20,4 @@ export class LoadingInterceptor implements HttpInterceptor {
       finalize(() => {
       this._NgxSpinnerService.hide();
     }));
-  }
+  }}

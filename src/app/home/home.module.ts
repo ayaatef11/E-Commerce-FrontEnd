@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
+    HomeComponent,
     CommonModule,
     CarouselModule,
     RouterModule,

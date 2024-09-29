@@ -8,8 +8,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-product-details',
-  templateUrl: './product-details.component.html',
-  styleUrl: './product-details.component.scss'
+  templateUrl: './product-detaills.component.html',
+  styleUrl: './product-detaills.component.scss'
 })
 export class ProductDetailsComponent implements OnInit{
   constructor(private _ShopService:ShopService, private _ActivatedRoute:ActivatedRoute,

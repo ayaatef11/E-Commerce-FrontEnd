@@ -12,13 +12,13 @@ import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    NavBarComponent,
     TestErrorComponent,
     NotFoundComponent,
     ServerErrorComponent,
     FooterComponent,
   ],
   imports: [
+    NavBarComponent,
     CommonModule,
     RouterLink,
     RouterLinkActive,

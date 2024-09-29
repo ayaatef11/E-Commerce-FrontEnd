@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from './order.service';
-import { Order } from '../shared/interfaces/order';
+import { Order } from '@stripe/stripe-js';
 
 @Component({
   selector: 'app-order',

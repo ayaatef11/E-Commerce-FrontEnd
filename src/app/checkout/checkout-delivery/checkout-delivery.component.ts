@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { BasketService } from '../../basket/basket.service';
 import { CheckoutService } from '../checkout.service';
-import { DeliveryMethod } from './../../shared/interfaces/deliveryMethod';
+import { DeliveryMethod } from '../../shared/interfaces/deliveryMethod';
 
 @Component({
   selector: 'app-checkout-delivery',

@@ -1,11 +1,11 @@
 import { Category } from './../shared/interfaces/category';
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment';
 import { BehaviorSubject, map } from 'rxjs';
-import { Basket, BasketItem, BasketTotals } from '../shared/interfaces/basket';
 import { HttpClient } from '@angular/common/http';
-import { Product } from '../shared/interfaces/product';
+import { environment } from '../environements/environment';
+import { Basket, BasketItem, BasketTotals } from '../shared/interfaces/basket';
 import { DeliveryMethod } from '../shared/interfaces/deliveryMethod';
+import { Product } from '../shared/interfaces/product';
 
 @Injectable({
   providedIn: 'root'

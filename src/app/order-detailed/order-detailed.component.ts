@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { OrdersService } from '../order/order.service';
-import { Order } from '../shared/interfaces/order';
+import { OrdersService } from '../order/order/order.service';
+import { Order } from '@stripe/stripe-js';
 
 @Component({
   selector: 'app-order-detailed',

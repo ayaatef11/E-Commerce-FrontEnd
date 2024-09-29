@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Order } from '../../shared/interfaces/order';
 import { Router } from '@angular/router';
+import { Order } from '@stripe/stripe-js';
 
 @Component({
   selector: 'app-checkout-success',

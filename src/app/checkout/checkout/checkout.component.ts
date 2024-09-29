@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AccountService } from '../../account/account.service';
 import { BasketService } from '../../basket/basket.service';
-
+import { StepperComponent } from '../../shared/stepper/stepper.component';
 @Component({
-  selector: 'app-stepper',
+  selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss'
 })

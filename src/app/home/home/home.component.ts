@@ -1,11 +1,12 @@
-import { shopParams } from './../shared/interfaces/shopParams';
+
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { ShopService } from '../shop/shop.service';
-import { Brand } from '../shared/interfaces/brand';
-import { Product } from '../shared/interfaces/product';
 import { ToastrService } from 'ngx-toastr';
-import { BasketService } from '../basket/basket.service';
+import { ShopService } from '../../shop/shop.service';
+import { BasketService } from '../../basket/basket.service';
+import { Brand } from '../../shared/interfaces/brand';
+import { Product } from '../../shared/interfaces/product';
+import { shopParams } from '../../shared/interfaces/shopParams';
 
 @Component({
   selector: 'app-home',
