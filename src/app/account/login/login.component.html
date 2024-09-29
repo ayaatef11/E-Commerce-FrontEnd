@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center mt-5">
+  <div class="col-3">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="text-center mb-4">
+        <h1 class="mb-3">Login</h1>
+      </div>
+      <!--loginForm: This is an instance of FormGroup in Angular's reactive forms
+      , which manages the state of the form.
+controls['email']: This is a specific FormControl for the email field, which handles
+the input's validation, value, and state (like touched, dirty, etc.).
+By passing formControl, you're binding the state of this specific form control
+to the custom app-text-input component, so that it can handle form input and validation
+for the email field.-->
+      <app-text-input [formControl]="loginForm.controls['email']" [label]="'Email Address'"></app-text-input>
+      <app-text-input [formControl]="loginForm.controls['password']" [type]="'password'" [label]="'Password'"></app-text-input>
+      <div class="d-grid">
+        <button [class.disabled-btn]="loginForm.invalid" class="btn btn-lg btn-primary mt-3" type="submit">Sign In</button>
+      </div>
+    </form>
+  </div>
+</div>
