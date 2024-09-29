@@ -4,7 +4,7 @@ import { AccountService } from '../../account/account.service';
 import { BasketService } from '../../basket/basket.service';
 
 @Component({
-  selector: 'app-checkout',
+  selector: 'app-stepper',
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss'
 })
