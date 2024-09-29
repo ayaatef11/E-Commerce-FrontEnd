@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent {
+  constructor(public _BasketService:BasketService, public _AccountService:AccountService){}
 
 }
