@@ -1,0 +1,12 @@
+.product {
+  overflow: hidden;
+}
+.product:hover .main-btn {
+  transform: translateY(0);
+  opacity: 1;
+}
+.product .main-btn {
+  transform: translateY(150%);
+  opacity: 0;
+  transition: 0.8s;
+}/*# sourceMappingURL=home.component.css.map */
