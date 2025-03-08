@@ -27,6 +27,7 @@ import { FooterComponent } from './footer/footer.component';
       positionClass: 'toast-bottom-right',
       preventDuplicates: true
     }),
+    FooterComponent,
     SharedModule
   ],
   exports: [

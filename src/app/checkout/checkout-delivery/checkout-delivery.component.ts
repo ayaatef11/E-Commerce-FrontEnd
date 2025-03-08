@@ -1,10 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BasketService } from '../../basket/basket.service';
 import { CheckoutService } from '../checkout.service';
 import { DeliveryMethod } from '../../shared/interfaces/deliveryMethod';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
+  imports:[ReactiveFormsModule,NgFor,NgIf],
+  standalone:true,
   selector: 'app-checkout-delivery',
   templateUrl: './checkout-delivery.component.html',
   styleUrl: './checkout-delivery.component.scss'

@@ -4,8 +4,14 @@ import { Category } from '../shared/interfaces/category';
 import { Product } from '../shared/interfaces/product';
 import { shopParams } from '../shared/interfaces/shopParams';
 import { ShopService } from './shop.service';
+import { PaginationHeaderComponent } from '../shared/pagination-header/pagination-header.component';
+import { ProductItemComponent } from './product-item/product-item.component';
+import { NgFor } from '@angular/common';
+import { PaginationComponent } from '../shared/pagination/pagination.component';
 
 @Component({
+  imports:[PaginationHeaderComponent,ProductItemComponent,NgFor,PaginationComponent],
+  standalone:true,
   selector: 'app-shop',
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss'

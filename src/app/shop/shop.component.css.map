@@ -1,1 +1,10 @@
-{"version":3,"sources":["shop.component.scss","shop.component.css"],"names":[],"mappings":"AAAA;EACE,eAAA;ACCF","file":"shop.component.css"}
+{
+  "version": 3,
+  "sources": [
+    "shop.component.scss",
+    "shop.component.css"
+  ],
+  "names": [],
+  "mappings": "AAAA;EACE,eAAA;ACCF",
+  "file": "shop.component.css"
+}

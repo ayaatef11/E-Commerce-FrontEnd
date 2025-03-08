@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from './order.service';
 import { Order } from '@stripe/stripe-js';
+import { CurrencyPipe, DatePipe, NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
+  imports:[NgFor,RouterLink,DatePipe,CurrencyPipe],
+  standalone:true,
   selector: 'app-order',
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.scss']

@@ -7,8 +7,10 @@ import { take } from 'rxjs';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
+  imports:[],
   selector: 'app-product-details',
-  templateUrl: './product-detaills.component.html',
+  standalone:true,
+  templateUrl: './product-details.component.html',
   styleUrl: './product-detaills.component.scss'
 })
 export class ProductDetailsComponent implements OnInit{

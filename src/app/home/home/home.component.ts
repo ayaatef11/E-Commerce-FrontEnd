@@ -1,14 +1,20 @@
 
 import { Component, OnInit } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { OwlOptions, OwlRouterLinkDirective } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
 import { ShopService } from '../../shop/shop.service';
 import { BasketService } from '../../basket/basket.service';
 import { Brand } from '../../shared/interfaces/brand';
 import { Product } from '../../shared/interfaces/product';
 import { shopParams } from '../../shared/interfaces/shopParams';
+import { CommonModule, CurrencyPipe, NgFor, NgIf, SlicePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { SearchPipe } from '../../core/pipes/search.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
+  imports:[NgIf,NgFor,RouterLink,SearchPipe,SlicePipe,CurrencyPipe,CommonModule,FormsModule],
+  standalone:true,
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

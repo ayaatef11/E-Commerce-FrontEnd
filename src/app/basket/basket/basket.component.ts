@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 import { BasketService } from '../basket.service';
 import { BasketItem } from '../../shared/interfaces/basket';
+import { ToastrComponentlessModule } from 'ngx-toastr';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @Component({
+  imports:[ClipboardModule],
   selector: 'app-basket',
+  standalone:true,
   templateUrl: './basket.component.html',
   styleUrl: './basket.component.scss'
 })

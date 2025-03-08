@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AccountService } from '../account.service';
 import { Router } from '@angular/router';
+import { TextInputComponent } from '../../shared/text-input/text-input.component';
 
 @Component({
+  imports:[TextInputComponent,ReactiveFormsModule],
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'

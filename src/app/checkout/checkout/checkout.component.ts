@@ -3,7 +3,16 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { AccountService } from '../../account/account.service';
 import { BasketService } from '../../basket/basket.service';
 import { StepperComponent } from '../../shared/stepper/stepper.component';
+import { CdkStepperModule } from '@angular/cdk/stepper';
+import { CheckoutAddressComponent } from '../checkout-address/checkout-address.component';
+import { CheckoutDeliveryComponent } from '../checkout-delivery/checkout-delivery.component';
+import { CheckoutReviewComponent } from '../checkout-review/checkout-review.component';
+
+
 @Component({
+  
+  imports:[CdkStepperModule,StepperComponent,CheckoutAddressComponent,CheckoutDeliveryComponent,CheckoutReviewComponent],
+  standalone:true,
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss'

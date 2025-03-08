@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { BasketService } from './basket/basket.service';
 import { AccountService } from './account/account.service';
+import { FooterComponent } from './core/footer/footer.component';
+import { NavBarComponent } from './core/nav-bar/nav-bar.component';
+import { RouterOutlet } from '@angular/router';
+import { NgxSpinner, NgxSpinnerComponent } from 'ngx-spinner';
 
 @Component({
+  imports:[FooterComponent,NavBarComponent,RouterOutlet,NgxSpinnerComponent],
+  standalone:true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrdersService } from '../order/order/order.service';
 import { Order } from '@stripe/stripe-js';
+import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
+  imports:[CurrencyPipe,NgFor,NgIf],
+  standalone:true,
   selector: 'app-order-detailed',
   templateUrl: './order-detailed.component.html',
   styleUrls: ['./order-detailed.component.scss']

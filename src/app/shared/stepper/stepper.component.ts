@@ -1,8 +1,11 @@
 import { CdkStepper } from '@angular/cdk/stepper';
+import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
+  imports:[NgIf,NgFor,NgTemplateOutlet],
   selector: 'app-stepper',
+  standalone:true,
   templateUrl: './stepper.component.html',
   styleUrl: './stepper.component.scss',
   providers: [{provide: CdkStepper, useExisting: StepperComponent}]

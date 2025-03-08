@@ -11,28 +11,9 @@ import { environment } from '../environements/environment';
 export class AccountService {
   constructor(private _HttpClient:HttpClient, private _Router:Router) { }
   baseUrl = environment.apiUrl;
-/*A BehaviorSubject in Angular is a special type of Subject from RxJS
-(Reactive Extensions for JavaScript) that allows you to manage and share state
-between different parts of your application. It is particularly useful for scenarios
-where you want to emit and observe state changes, as it maintains the current value
-and emits it to new subscribers.
-Key Features of BehaviorSubject
-Initial Value: A BehaviorSubject requires an initial value when it is created.
- This initial value will be emitted immediately to any subscriber that subscribes
-  to the BehaviorSubject.
-Current Value: BehaviorSubject stores the current value and can be accessed using the
- getValue() method. This is different from a regular Subject, which does not hold any value.
-Multicasting: Like other Subjects, BehaviorSubjects are multicast, meaning that
-subscribers will share the same execution context, and all subscribers will receive the same emitted values.
-State Management: BehaviorSubjects are commonly used in state management scenarios
- where you want to keep track of the state across various components. */
-   // Creating a BehaviorSubject with an initial value of null
-
   private currentUserSourse = new BehaviorSubject<User | null>(null);
   currentUser$ = this.currentUserSourse.asObservable();
-//This function takes a token (a string) as an argument, which is typically a JWT (JSON Web Token).
-// The token is used to authenticate the user when making a request to the backend.
-//http get user
+  
 loadCurrentUser(token:string){
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);

@@ -1,7 +1,10 @@
+import { NgIf } from '@angular/common';
 import { Component, Input, Self } from '@angular/core';
 import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
 
 @Component({
+  imports:[NgIf],
+  standalone:true,
   selector: 'app-text-input',
   templateUrl: './text-input.component.html',
   styleUrl: './text-input.component.scss'

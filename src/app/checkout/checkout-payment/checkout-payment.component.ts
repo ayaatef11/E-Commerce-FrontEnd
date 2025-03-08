@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { BasketService } from '../../basket/basket.service';
 import { CheckoutService } from '../checkout.service';
 import { ToastrService } from 'ngx-toastr';
@@ -9,8 +9,11 @@ import { Stripe, StripeCardCvcElement, StripeCardExpiryElement, StripeCardNumber
 import { firstValueFrom } from 'rxjs';
 import { Basket } from '../../shared/interfaces/basket';
 import { OrderToCreate } from '../../shared/interfaces/order';
+import { TextInputComponent } from '../../shared/text-input/text-input.component';
 
 @Component({
+  imports:[TextInputComponent,ReactiveFormsModule],
+  standalone:true,
   selector: 'app-checkout-payment',
   templateUrl: './checkout-payment.component.html',
   styleUrl: './checkout-payment.component.scss'

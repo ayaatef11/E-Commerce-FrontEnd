@@ -1,13 +1,18 @@
 import { Component, Input } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AccountService } from '../../account/account.service';
 import { ToastrService } from 'ngx-toastr';
+import { NgFor, NgIf } from '@angular/common';
+import { TextInputComponent } from '../../shared/text-input/text-input.component';
 
 @Component({
+  imports:[NgIf,TextInputComponent,ReactiveFormsModule],
+  standalone:true,
   selector: 'app-checkout-address',
   templateUrl: './checkout-address.component.html',
   styleUrl: './checkout-address.component.scss'
 })
+
 export class CheckoutAddressComponent {
   @Input() checkoutForm?: FormGroup;
 

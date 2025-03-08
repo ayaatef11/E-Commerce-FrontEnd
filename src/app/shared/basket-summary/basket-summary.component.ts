@@ -1,8 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BasketItem } from '../interfaces/basket';
 import { BasketService } from '../../basket/basket.service';
+import { CommonModule, CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { asyncScheduler } from 'rxjs';
 
 @Component({
+  imports:[RouterLink,NgIf,NgFor,CurrencyPipe,CommonModule],
+  standalone:true,
   selector: 'app-basket-summary',
   templateUrl: './basket-summary.component.html',
   styleUrl: './basket-summary.component.scss'

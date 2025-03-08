@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { AbstractControl, AsyncValidatorFn, FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, AsyncValidatorFn, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AccountService } from '../account.service';
 import { Router } from '@angular/router';
 import { finalize, map } from 'rxjs';
+import { TextInputComponent } from '../../shared/text-input/text-input.component';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
+  imports:[TextInputComponent,NgFor,NgIf,ReactiveFormsModule],
   selector: 'app-register',
+  standalone:true,
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss'
 })
