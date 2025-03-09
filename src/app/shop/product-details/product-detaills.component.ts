@@ -4,10 +4,11 @@ import { ShopService } from '../shop.service';
 import { Product } from '../../shared/interfaces/product';
 import { BasketService } from '../../basket/basket.service';
 import { take } from 'rxjs';
-import { OwlOptions } from 'ngx-owl-carousel-o';
+import { CarouselComponent, CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
-  imports:[],
+  imports:[NgIf,CurrencyPipe,CarouselModule,NgFor],
   selector: 'app-product-details',
   standalone:true,
   templateUrl: './product-details.component.html',

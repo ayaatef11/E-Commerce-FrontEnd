@@ -11,10 +11,10 @@ export class CheckoutService {
 
   baseUrl = environment.apiUrl;
 
-  constructor(private _HttpClient:HttpClient) { }
+  constructor(private http:HttpClient) { }
 
   getDeliveryMethods(){
-    return this._HttpClient.get<DeliveryMethod[]>(this.baseUrl + 'order/deliverymethod').pipe(
+    return this.http.get<DeliveryMethod[]>(this.baseUrl + 'order/deliverymethod').pipe(
       map(dm => {
         return dm.sort((a,b) => b.cost - a.cost)
       })
@@ -22,7 +22,7 @@ export class CheckoutService {
   }
 
   createOrder(order: OrderToCreate){
-    return this._HttpClient.post<Order>(this.baseUrl + 'order', order)
+    return this.http.post<Order>(this.baseUrl + 'order', order)
   }
 
 

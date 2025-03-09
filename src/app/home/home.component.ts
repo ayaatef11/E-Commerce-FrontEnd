@@ -1,6 +1,6 @@
 
-import { Component, OnInit } from '@angular/core';
-import { OwlOptions, OwlRouterLinkDirective } from 'ngx-owl-carousel-o';
+import { Component, NgModule, OnInit } from '@angular/core';
+import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
 import { ShopService } from '../../shop/shop.service';
 import { BasketService } from '../../basket/basket.service';
@@ -13,12 +13,13 @@ import { SearchPipe } from '../../core/pipes/search.pipe';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  imports:[NgIf,NgFor,RouterLink,SearchPipe,SlicePipe,CurrencyPipe,CommonModule,FormsModule],
+  imports:[NgIf,NgFor,RouterLink,SearchPipe,SlicePipe,CurrencyPipe,CommonModule,FormsModule,CarouselModule],
   standalone:true,
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
+
 export class HomeComponent implements OnInit{
   constructor(private _ShopService:ShopService, private _ToastrService:ToastrService,
     private _BasketService:BasketService){}

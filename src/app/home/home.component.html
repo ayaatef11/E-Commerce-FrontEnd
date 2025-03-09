@@ -1,27 +1,27 @@
 <div class="container-fluid">
   <section>
-    <!-- <owl-carousel-o [options]="mainSliderOptions">
+    <owl-carousel-o [options]="mainSliderOptions">
       <ng-template carouselSlide>
-        <img height="450" src="./assets/images/food_1.jpg" alt="slider-1">
+        <img height="450" src="/images/food_1.jpg" alt="slider-1">
       </ng-template>
       <ng-template carouselSlide>
-        <img height="450" src="./assets/images/food_2.jpg" alt="slider-2">
+        <img height="450" src="/images/food_2.jpg" alt="slider-2">
       </ng-template>
       <ng-template carouselSlide>
-        <img height="450" src="./assets/images/food_3.jpg" alt="slider-3">
+        <img height="450" src="/images/food_3.jpg" alt="slider-3">
       </ng-template>
-    </owl-carousel-o> -->
+    </owl-carousel-o>
   </section>
   <section class="py-4" *ngIf="brands?.length">
     <h2 class="fw-bold">Popular Categories</h2>
-    <!-- <owl-carousel-o [options]="categoryOptions">
+    <owl-carousel-o [options]="categoryOptions">
       <ng-container *ngFor="let brand of brands">
         <ng-template carouselSlide>
           <img height="300" [src]="brand.imageCover" [alt]="brand.name" [title]="brand.name">
           <h3 class="h6 text-main text-center">{{brand.name}}</h3>
         </ng-template>
       </ng-container>
-    </owl-carousel-o> -->
+    </owl-carousel-o>
   </section>
   <section class="py-4" *ngIf="productsData.length > 0">
     <h2 class="fw-bold">Popular Products</h2>

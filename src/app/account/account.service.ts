@@ -8,12 +8,13 @@ import { environment } from '../environements/environment';
 @Injectable({
   providedIn: 'root'
 })
+
 export class AccountService {
   constructor(private _HttpClient:HttpClient, private _Router:Router) { }
   baseUrl = environment.apiUrl;
   private currentUserSourse = new BehaviorSubject<User | null>(null);
   currentUser$ = this.currentUserSourse.asObservable();
-  
+
 loadCurrentUser(token:string){
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);

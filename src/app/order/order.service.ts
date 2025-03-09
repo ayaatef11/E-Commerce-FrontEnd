@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../../environements/environment';
 import { Order } from '@stripe/stripe-js';
+import { environment } from '../environements/environment';
 
 @Injectable({
   providedIn: 'root'

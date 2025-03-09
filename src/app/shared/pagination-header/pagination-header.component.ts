@@ -1,7 +1,8 @@
+import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
-  imports[],
+  imports:[NgIf],
   standalone:true,
   selector: 'app-pagination-header',
   templateUrl: './pagination-header.component.html',

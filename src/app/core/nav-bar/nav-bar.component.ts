@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { BasketService } from '../../basket/basket.service';
 import { AccountService } from '../../account/account.service';
+import { AsyncPipe, NgIf } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [],
+  imports: [NgIf,AsyncPipe,RouterLink,RouterLinkActive],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })

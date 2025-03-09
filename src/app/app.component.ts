@@ -22,10 +22,17 @@ export class AppComponent implements OnInit {
     this.loadCureentUser();
   }
 
-  loadBasket(){
-    const basketId = localStorage.getItem('basket_id');
-    basketId && this._BasketService.getBasket(basketId);
+  loadBasket() {
+    if (typeof localStorage !== 'undefined') {  
+      const basketId = localStorage.getItem('basket_id');
+      if (basketId) {
+        this._BasketService.getBasket(basketId);
+      }
+    } else {
+      console.warn('localStorage is not available');
+    }
   }
+
 
   loadCureentUser(){
     const token = localStorage.getItem('token');

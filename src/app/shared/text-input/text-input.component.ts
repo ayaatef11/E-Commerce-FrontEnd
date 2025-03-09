@@ -1,9 +1,9 @@
-import { NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Component, Input, Self } from '@angular/core';
-import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
+import { ControlValueAccessor, FormControl, FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  imports:[NgIf],
+  imports:[NgIf,NgClass,ReactiveFormsModule],
   standalone:true,
   selector: 'app-text-input',
   templateUrl: './text-input.component.html',
