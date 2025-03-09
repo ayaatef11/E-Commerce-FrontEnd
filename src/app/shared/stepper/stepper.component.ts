@@ -1,9 +1,10 @@
 import { CdkStepper } from '@angular/cdk/stepper';
-import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import { CommonModule, NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  imports:[NgIf,NgFor,NgTemplateOutlet],
+  imports:[CommonModule, RouterModule,NgIf,NgFor,NgTemplateOutlet],
   selector: 'app-stepper',
   standalone:true,
   templateUrl: './stepper.component.html',

@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Order } from '@stripe/stripe-js';
-import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import {  Router, RouterModule } from '@angular/router';
+import { CommonModule, CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { OrdersService } from '../order/order.service';
+import { Order } from '../shared/interfaces/Order';
 
 @Component({
-  imports:[CurrencyPipe,NgFor,NgIf],
+  imports:[CommonModule, RouterModule,NgFor,NgIf,CurrencyPipe],
   standalone:true,
   selector: 'app-order-detailed',
   templateUrl: './order-detailed.component.html',
@@ -13,10 +13,10 @@ import { OrdersService } from '../order/order.service';
 })
 export class OrderDetailedComponent implements OnInit {
   order?: Order;
-  constructor(private orderService: OrdersService, private route: ActivatedRoute) {}
+  constructor(private orderService: OrdersService, private route: Router) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.routerState.snapshot.root.firstChild?.paramMap.get('id');
     id && this.orderService.getOrderDetailed(+id).subscribe({
       next: order => {
         this.order = order;

@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '../../shared/interfaces/product';
+import { Product } from '../../shared/interfaces/Product';
 import { BasketService } from '../../basket/basket.service';
-import { CurrencyPipe, NgIf } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { CommonModule, CurrencyPipe, NgIf } from '@angular/common';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
-  imports:[CurrencyPipe,RouterLink,NgIf],
+  imports:[CommonModule, RouterModule,CurrencyPipe,RouterLink,NgIf],
   standalone:true,
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',

@@ -1,10 +1,9 @@
-import { Category } from './../shared/interfaces/category';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Basket, BasketItem, BasketTotals } from '../shared/interfaces/basket';
-import { DeliveryMethod } from '../shared/interfaces/deliveryMethod';
-import { Product } from '../shared/interfaces/product';
+import { Basket, BasketItem, BasketTotals } from '../shared/interfaces/Basket';
+import { DeliveryMethod } from '../shared/interfaces/DeliveryMethod';
+import { Product } from '../shared/interfaces/Product';
 import { environment } from '../environements/environment';
 
 @Injectable({
@@ -18,6 +17,7 @@ export class BasketService {
   basketSource$ = this.basketSource.asObservable();
 
   private basketTotalSource = new BehaviorSubject<BasketTotals | null>(null);
+  
   basketTotalSource$ = this.basketTotalSource.asObservable();
 
   basketSource2 = new BehaviorSubject<Basket | null>(null);

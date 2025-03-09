@@ -1,8 +1,9 @@
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  imports:[NgIf],
+  imports:[CommonModule, RouterModule,NgIf],
   standalone:true,
   selector: 'app-pagination-header',
   templateUrl: './pagination-header.component.html',

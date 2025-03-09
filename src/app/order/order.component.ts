@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from './order.service';
-import { Order } from '@stripe/stripe-js';
-import { CurrencyPipe, DatePipe, NgFor } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { CommonModule, CurrencyPipe, DatePipe, NgFor } from '@angular/common';
+import { RouterLink, RouterModule } from '@angular/router';
+import { Order } from '../shared/interfaces/Order';
 
 @Component({
-  imports:[NgFor,RouterLink,DatePipe,CurrencyPipe],
+  imports:[CommonModule, RouterModule,NgFor,RouterLink,DatePipe,CurrencyPipe],
   standalone:true,
   selector: 'app-order',
   templateUrl: './order.component.html',

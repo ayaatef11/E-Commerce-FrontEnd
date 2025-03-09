@@ -1,10 +1,10 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Product } from '../shared/interfaces/Product';
+import { Category } from '../shared/interfaces/Category';
 import { Pagination } from '../shared/interfaces/pagination';
-import { Product } from '../shared/interfaces/product';
-import { Brand } from '../shared/interfaces/brand';
-import { Category } from '../shared/interfaces/category';
-import { shopParams } from '../shared/interfaces/shopParams';
+import { Brand } from '../shared/interfaces/Brand';
+import { ShopParams } from '../shared/interfaces/ShopParams';
 
 
 @Injectable({
@@ -15,7 +15,7 @@ export class ShopService {
 
   baseUrl:string = 'https://localhost:5001/api/';
 
-  getProducts(shopParams: shopParams){
+  getProducts(shopParams: ShopParams){
     let params = new HttpParams();
 
     params = params.append('sort', shopParams.sort);

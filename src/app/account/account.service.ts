@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map } from 'rxjs';
+import { BehaviorSubject, catchError, map, of } from 'rxjs';
 import { Address, User } from '../shared/interfaces/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -8,58 +8,86 @@ import { environment } from '../environements/environment';
 @Injectable({
   providedIn: 'root'
 })
-
 export class AccountService {
-  constructor(private _HttpClient:HttpClient, private _Router:Router) { }
+  constructor(private _HttpClient: HttpClient, private _Router: Router) {}
+
   baseUrl = environment.apiUrl;
-  private currentUserSourse = new BehaviorSubject<User | null>(null);
-  currentUser$ = this.currentUserSourse.asObservable();
 
-loadCurrentUser(token:string){
-    let headers = new HttpHeaders();
-    headers = headers.set('Authorization', `Bearer ${token}`);
-    return this._HttpClient.get<User>(this.baseUrl + 'account', {headers}).pipe(
+  private currentUserSource = new BehaviorSubject<User | null>(null);
+  currentUser$ = this.currentUserSource.asObservable();
+
+  /** ✅ Load Current User */
+  loadCurrentUser(token: string) {
+    let headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+
+    return this._HttpClient.get<User>(`${this.baseUrl}account`, { headers }).pipe(
       map(user => {
-        localStorage.setItem('token', user.token);
-        this.currentUserSourse.next(user);
+        this.setUserInLocalStorage(user);
+        this.currentUserSource.next(user);
+      }),
+      catchError(error => {
+        console.error('Error loading user:', error);
+        return of(null);
       })
     );
   }
 
-  login(values:any){
-    return this._HttpClient.post<User>(this.baseUrl + 'account/login', values).pipe(
+  /** ✅ Login */
+  login(values: any) {
+    return this._HttpClient.post<User>(`${this.baseUrl}account/login`, values).pipe(
       map(user => {
-        localStorage.setItem('token', user.token);
-        this.currentUserSourse.next(user);
+        this.setUserInLocalStorage(user);
+        this.currentUserSource.next(user);
+      }),
+      catchError(error => {
+        console.error('Login error:', error);
+        return of(null);
       })
     );
   }
 
-  register(values:any){
-    return this._HttpClient.post<User>(this.baseUrl + 'account/register', values).pipe(
+  /** ✅ Register */
+  register(values: any) {
+    return this._HttpClient.post<User>(`${this.baseUrl}account/register`, values).pipe(
       map(user => {
-        localStorage.setItem('token', user.token);
-        this.currentUserSourse.next(user);
+        this.setUserInLocalStorage(user);
+        this.currentUserSource.next(user);
+      }),
+      catchError(error => {
+        console.error('Registration error:', error);
+        return of(null);
       })
     );
   }
-/*important  */
-  logout(){
-    localStorage.removeItem('token');
-    this.currentUserSourse.next(null);
+
+  /** ✅ Logout */
+  logout() {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('token');
+    }
+    this.currentUserSource.next(null);
     this._Router.navigateByUrl('/');
   }
 
-  checkEmailExists(email:string){
-    return this._HttpClient.get<boolean>(this.baseUrl + 'account/emailexists?email=' + email);
+  /** ✅ Check if Email Exists */
+  checkEmailExists(email: string) {
+    return this._HttpClient.get<boolean>(`${this.baseUrl}account/emailexists?email=${email}`);
   }
 
-  getUserAddress(){
-    return this._HttpClient.get<Address>(this.baseUrl + 'account/address');
+  /** ✅ Get User Address */
+  getUserAddress() {
+    return this._HttpClient.get<Address>(`${this.baseUrl}account/address`);
   }
 
-  updateUserAddress(address: Address){
-    return this._HttpClient.put(this.baseUrl + 'account/address', address);
+  /** ✅ Update User Address */
+  updateUserAddress(address: Address) {
+    return this._HttpClient.put(`${this.baseUrl}account/address`, address);
   }
 
+  /** ✅ Private Helper: Set User in Local Storage */
+  private setUserInLocalStorage(user: User) {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('token', user.token);
+    }
+  }
 }

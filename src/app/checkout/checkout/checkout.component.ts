@@ -7,11 +7,15 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 import { CheckoutAddressComponent } from '../checkout-address/checkout-address.component';
 import { CheckoutDeliveryComponent } from '../checkout-delivery/checkout-delivery.component';
 import { CheckoutReviewComponent } from '../checkout-review/checkout-review.component';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
-  
-  imports:[CdkStepperModule,StepperComponent,CheckoutAddressComponent,CheckoutDeliveryComponent,CheckoutReviewComponent],
+
+  imports:[CommonModule, RouterModule,CdkStepperModule,StepperComponent
+    ,CheckoutAddressComponent,CheckoutDeliveryComponent
+    ,CheckoutReviewComponent],
   standalone:true,
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',

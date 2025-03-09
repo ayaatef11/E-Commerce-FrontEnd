@@ -1,16 +1,17 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Brand } from '../shared/interfaces/brand';
-import { Category } from '../shared/interfaces/category';
-import { Product } from '../shared/interfaces/product';
-import { shopParams } from '../shared/interfaces/shopParams';
+import { Brand } from '../shared/interfaces/Brand';
+import { Category } from '../shared/interfaces/Category';
+import { Product } from '../shared/interfaces/Product';
+import { ShopParams } from '../shared/interfaces/ShopParams';
 import { ShopService } from './shop.service';
 import { PaginationHeaderComponent } from '../shared/pagination-header/pagination-header.component';
 import { ProductItemComponent } from './product-item/product-item.component';
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { PaginationComponent } from '../shared/pagination/pagination.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  imports:[PaginationHeaderComponent,ProductItemComponent,NgFor,PaginationComponent],
+  imports:[CommonModule, RouterModule,PaginationHeaderComponent,ProductItemComponent,NgFor,PaginationComponent],
   standalone:true,
   selector: 'app-shop',
   templateUrl: './shop.component.html',
@@ -23,7 +24,7 @@ export class ShopComponent implements OnInit {
   products: Product[] = [];
   brands: Brand[] = [];
   categories: Category[] = [];
-  shopParams = new shopParams();
+  shopParams = new ShopParams();
   totalCount:number = 0;
   sortOptions = [
     {name: 'Alphabetical', value: 'name'},

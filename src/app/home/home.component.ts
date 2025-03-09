@@ -2,18 +2,18 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
-import { ShopService } from '../../shop/shop.service';
-import { BasketService } from '../../basket/basket.service';
-import { Brand } from '../../shared/interfaces/brand';
-import { Product } from '../../shared/interfaces/product';
-import { shopParams } from '../../shared/interfaces/shopParams';
 import { CommonModule, CurrencyPipe, NgFor, NgIf, SlicePipe } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { SearchPipe } from '../../core/pipes/search.pipe';
+import { RouterLink, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ShopService } from '../shop/shop.service';
+import { BasketService } from '../basket/basket.service';
+import { Brand } from '../shared/interfaces/Brand';
+import { Product } from '../shared/interfaces/Product';
+import { SearchPipe } from '../core/pipes/search.pipe';
+import { ShopParams } from '../shared/interfaces/ShopParams';
 
 @Component({
-  imports:[NgIf,NgFor,RouterLink,SearchPipe,SlicePipe,CurrencyPipe,CommonModule,FormsModule,CarouselModule],
+  imports:[NgIf,NgFor,RouterLink,SearchPipe,SlicePipe,CurrencyPipe,CommonModule,RouterModule,FormsModule,CarouselModule],
   standalone:true,
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit{
     private _BasketService:BasketService){}
   brands?:Brand[];
   productsData: Product[] = [];
-  shopParams = new shopParams();
+  shopParams = new ShopParams();
   searchValue:string = '';
 
   ngOnInit(): void {

@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {  RouterModule } from '@angular/router';
 import { ShopService } from '../shop.service';
-import { Product } from '../../shared/interfaces/product';
+import { Product } from '../../shared/interfaces/Product';
 import { BasketService } from '../../basket/basket.service';
 import { take } from 'rxjs';
 import { CarouselComponent, CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import { CommonModule, CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
-  imports:[NgIf,CurrencyPipe,CarouselModule,NgFor],
+  imports:[CommonModule, RouterModule,NgIf,CurrencyPipe,CarouselModule,NgFor],
   selector: 'app-product-details',
   standalone:true,
   templateUrl: './product-details.component.html',
   styleUrl: './product-detaills.component.scss'
 })
 export class ProductDetailsComponent implements OnInit{
-  constructor(private _ShopService:ShopService, private _ActivatedRoute:ActivatedRoute,
+  constructor(private _ShopService:ShopService, private router:Router,
     private _BasketService:BasketService){}
   product?:Product;
   quantity = 1;
@@ -26,7 +27,7 @@ export class ProductDetailsComponent implements OnInit{
   }
 
   loadProduct(){
-    let id = this._ActivatedRoute.snapshot.paramMap.get('id');
+    let id = this.router.routerState.snapshot.root.firstChild?.paramMap.get('id');
     if(id)
     {
       this._ShopService.getProduct(+id).subscribe({
