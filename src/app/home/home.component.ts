@@ -2,7 +2,7 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
 import { ToastrService } from 'ngx-toastr';
-import { CommonModule, CurrencyPipe, NgFor, NgIf, SlicePipe } from '@angular/common';
+import {  CurrencyPipe, NgFor, NgIf, SlicePipe } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ShopService } from '../shop/shop.service';
@@ -13,7 +13,9 @@ import { SearchPipe } from '../core/pipes/search.pipe';
 import { ShopParams } from '../shared/interfaces/ShopParams';
 
 @Component({
-  imports:[NgIf,NgFor,RouterLink,SearchPipe,SlicePipe,CurrencyPipe,CommonModule,RouterModule,FormsModule,CarouselModule],
+  imports:[NgIf,NgFor,RouterLink,SearchPipe,SlicePipe
+    ,CurrencyPipe,FormsModule,CarouselModule
+  ],
   standalone:true,
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -30,8 +32,8 @@ export class HomeComponent implements OnInit{
 
   ngOnInit(): void {
     this.shopParams.pageSize = 20;
-    this.loadProducts();
-    this.loadBrands();
+    // this.loadProducts();
+    // this.loadBrands();
   }
 
   loadProducts(){

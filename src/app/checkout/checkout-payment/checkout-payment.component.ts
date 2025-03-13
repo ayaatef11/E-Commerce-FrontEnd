@@ -4,16 +4,16 @@ import { BasketService } from '../../basket/basket.service';
 import { CheckoutService } from '../checkout.service';
 import { ToastrService } from 'ngx-toastr';
 import { Address } from '../../shared/interfaces/user';
-import { NavigationExtras, Router, RouterModule } from '@angular/router';
+import { NavigationExtras, Router, RouterLink, RouterModule } from '@angular/router';
 import { Stripe, StripeCardCvcElement, StripeCardExpiryElement, StripeCardNumberElement, loadStripe } from '@stripe/stripe-js';
 import { firstValueFrom } from 'rxjs';
 import { Basket } from '../../shared/interfaces/Basket';
 import { OrderToCreate } from '../../shared/interfaces/Order';
 import { TextInputComponent } from '../../shared/text-input/text-input.component';
-import { CommonModule } from '@angular/common';
+import { NgIf } from '@angular/common';
 
 @Component({
-  imports:[CommonModule, RouterModule,TextInputComponent,ReactiveFormsModule],
+  imports:[ TextInputComponent,ReactiveFormsModule,ReactiveFormsModule,NgIf],
   standalone:true,
   selector: 'app-checkout-payment',
   templateUrl: './checkout-payment.component.html',

@@ -4,12 +4,12 @@ import { ShopService } from '../shop.service';
 import { Product } from '../../shared/interfaces/Product';
 import { BasketService } from '../../basket/basket.service';
 import { take } from 'rxjs';
-import { CarouselComponent, CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { CommonModule, CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import {  CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import {  CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
-  imports:[CommonModule, RouterModule,NgIf,CurrencyPipe,CarouselModule,NgFor],
+  imports:[ RouterModule,NgIf,CurrencyPipe,CarouselModule,NgFor],
   selector: 'app-product-details',
   standalone:true,
   templateUrl: './product-details.component.html',

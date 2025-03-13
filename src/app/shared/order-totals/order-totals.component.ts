@@ -4,7 +4,7 @@ import { AsyncPipe, CommonModule, CurrencyPipe, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  imports:[CommonModule, RouterModule,CurrencyPipe,NgIf,AsyncPipe],
+  imports:[ CurrencyPipe,NgIf,AsyncPipe],
   standalone:true,
   selector: 'app-order-totals',
   templateUrl: './order-totals.component.html',

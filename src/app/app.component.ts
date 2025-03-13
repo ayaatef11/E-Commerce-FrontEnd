@@ -6,9 +6,10 @@ import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { NgxSpinner, NgxSpinnerComponent } from 'ngx-spinner';
 import { CommonModule } from '@angular/common';
+import { TestErrorComponent } from './core/test-error/test-error.component';
 
 @Component({
-  imports:[CommonModule, RouterModule,FooterComponent,NavBarComponent,RouterOutlet,NgxSpinnerComponent],
+  imports:[CommonModule, RouterModule,TestErrorComponent,FooterComponent,NavBarComponent,RouterOutlet,NgxSpinnerComponent],
   standalone:true,
   selector: 'app-root',
   templateUrl: './app.component.html',

@@ -5,7 +5,7 @@ import { CommonModule, CurrencyPipe, NgIf } from '@angular/common';
 import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
-  imports:[CommonModule, RouterModule,CurrencyPipe,RouterLink,NgIf],
+  imports:[ CurrencyPipe,RouterLink,NgIf],
   standalone:true,
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',

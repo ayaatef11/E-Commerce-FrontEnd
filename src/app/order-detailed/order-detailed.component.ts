@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {  Router, RouterModule } from '@angular/router';
-import { CommonModule, CurrencyPipe, NgFor, NgIf } from '@angular/common';
+import {  Router } from '@angular/router';
+import {CurrencyPipe, NgFor, NgIf } from '@angular/common';
 import { OrdersService } from '../order/order.service';
 import { Order } from '../shared/interfaces/Order';
 
 @Component({
-  imports:[CommonModule, RouterModule,NgFor,NgIf,CurrencyPipe],
+  imports:[NgFor,NgIf,CurrencyPipe],
   standalone:true,
   selector: 'app-order-detailed',
   templateUrl: './order-detailed.component.html',

@@ -1,7 +1,7 @@
-<div class="container-fluid">
-  <section>
-    <owl-carousel-o [options]="mainSliderOptions">
-      <ng-template carouselSlide>
+ <div class="container-fluid">
+   <section>
+     <owl-carousel-o [options]="mainSliderOptions">
+       <ng-template carouselSlide>
         <img height="450" src="/images/food_1.jpg" alt="slider-1">
       </ng-template>
       <ng-template carouselSlide>
@@ -10,9 +10,9 @@
       <ng-template carouselSlide>
         <img height="450" src="/images/food_3.jpg" alt="slider-3">
       </ng-template>
-    </owl-carousel-o>
-  </section>
-  <section class="py-4" *ngIf="brands?.length">
+     </owl-carousel-o>
+   </section>
+   <!-- <section class="py-4" *ngIf="brands?.length">
     <h2 class="fw-bold">Popular Categories</h2>
     <owl-carousel-o [options]="categoryOptions">
       <ng-container *ngFor="let brand of brands">
@@ -21,8 +21,8 @@
           <h3 class="h6 text-main text-center">{{brand.name}}</h3>
         </ng-template>
       </ng-container>
-    </owl-carousel-o>
-  </section>
+     </owl-carousel-o>
+   </section>
   <section class="py-4" *ngIf="productsData.length > 0">
     <h2 class="fw-bold">Popular Products</h2>
     <input [(ngModel)]="searchValue" type="text" class="form-control w-50 mx-auto form-control-sm my-3" placeholder="Search">
@@ -49,5 +49,5 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 </div>

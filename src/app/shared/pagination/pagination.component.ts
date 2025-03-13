@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  imports:[CommonModule, RouterModule,NgIf],
+  imports:[CommonModule, RouterModule],
   standalone:true,
   selector: 'app-pagination',
   templateUrl: './pagination.component.html',

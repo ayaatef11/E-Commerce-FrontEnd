@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  imports:[CommonModule, RouterModule,NgIf,NgFor,NgTemplateOutlet],
+  imports:[ NgIf,NgFor,NgTemplateOutlet],
   selector: 'app-stepper',
   standalone:true,
   templateUrl: './stepper.component.html',

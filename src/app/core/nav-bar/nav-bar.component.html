@@ -24,8 +24,8 @@
       </div>
     </a>
     <ng-container *ngIf="(_AccountService.currentUser$ | async) === null">
-      <a routerLink="/account/login" class="btn btn-outline-primary me-2">Login</a>
-      <a routerLink="/account/register" class="btn btn-outline-primary me-3">Sign Up</a>
+      <a routerLink="/login" class="btn btn-outline-primary me-2">Login</a>
+      <a routerLink="/register" class="btn btn-outline-primary me-3">Sign Up</a>
     </ng-container>
     <ng-container *ngIf="(_AccountService.currentUser$ | async) as user">
       <div class="dropdown ms-3 me-5" style="cursor: pointer;" dropdown>

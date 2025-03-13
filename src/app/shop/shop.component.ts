@@ -8,10 +8,9 @@ import { PaginationHeaderComponent } from '../shared/pagination-header/paginatio
 import { ProductItemComponent } from './product-item/product-item.component';
 import { CommonModule, NgFor } from '@angular/common';
 import { PaginationComponent } from '../shared/pagination/pagination.component';
-import { RouterModule } from '@angular/router';
 
 @Component({
-  imports:[CommonModule, RouterModule,PaginationHeaderComponent,ProductItemComponent,NgFor,PaginationComponent],
+  imports:[ PaginationHeaderComponent,ProductItemComponent,NgFor,PaginationComponent],
   standalone:true,
   selector: 'app-shop',
   templateUrl: './shop.component.html',
@@ -103,7 +102,7 @@ export class ShopComponent implements OnInit {
   onReset(){
     if(this.searchTerm)
       this.searchTerm.nativeElement.value = '';
-    this.shopParams = new shopParams();
+    this.shopParams = new ShopParams();
     this.getProducts();
   }
 

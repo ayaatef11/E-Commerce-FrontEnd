@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environements/environment';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-test-error',
+  standalone:true,
+  imports:[NgFor,NgIf],
   templateUrl: './test-error.component.html',
   styleUrl: './test-error.component.scss'
 })
@@ -15,7 +18,7 @@ export class TestErrorComponent {
   constructor(private _HttpClient:HttpClient){}
 
   get404Error(){
-    this._HttpClient.get(this.baseUrl + 'product/1000').subscribe({
+    this._HttpClient.get(this.baseUrl + 'product/1000').subscribe({///***make it flexible */
       next: (response) => {
         console.log(response);
       },
@@ -48,7 +51,7 @@ export class TestErrorComponent {
   }
 
   get400ValidationError(){
-    this._HttpClient.get(this.baseUrl + 'product/one').subscribe({
+    this._HttpClient.get(this.baseUrl + 'product/one').subscribe({//**** make it flexible */
       next: (response) => {
         console.log(response);
       },
